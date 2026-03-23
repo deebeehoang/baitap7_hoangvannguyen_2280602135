@@ -1,0 +1,22 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Building..."
+
+test:
+  stage: test
+  script:
+    - test -f public/index.html
+
+pages:
+  stage: deploy
+  script:
+    - echo "Deploying..."
+  artifacts:
+    paths:
+      - public
